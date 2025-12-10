@@ -6,18 +6,11 @@
   "iconUrl": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/vllm-color.png",
   "config": {
     "runsOn": "GPU",
-    "containerDiskInGb": 150,
-    "gpuIds": "ADA_80_PRO,AMPERE_80",
+    "containerDiskInGb": 50,
+    "gpuIds": "AMPERE_16,AMPERE_24,ADA_24,AMPERE_48,ADA_48_PRO,ADA_80_PRO,AMPERE_80,ADA_80_PRO,HOPPER_141",
     "gpuCount": 1,
     "allowedCudaVersions": ["12.9", "12.8", "12.7", "12.6", "12.5", "12.4"],
-    "presets": [
-      {
-        "name": "deepseek-ai/deepseek-r1-distill-llama-8b",
-        "defaults": {
-          "MODEL_NAME": "deepseek-ai/deepseek-r1-distill-llama-8b"
-        }
-      }
-    ],
+    "presets": [],
     "env": [
       {
         "key": "MODEL_NAME",
