@@ -258,10 +258,12 @@ class OpenAIvLLMEngine(vLLMEngine):
         return adapters
 
     async def _initialize_engines(self):
+        served_name = (
+            os.getenv("OPENAI_SERVED_MODEL_NAME_OVERRIDE") or self.engine_args.model
+        )
+
         self.base_model_paths = [
-            BaseModelPath(
-                name=self.engine_args.model, model_path=self.engine_args.model
-            )
+            BaseModelPath(name=served_name, model_path=self.engine_args.model)
         ]
 
         self.serving_models = OpenAIServingModels(
